@@ -41,6 +41,11 @@ in createSets [
     description = "Homeassistant framework and its components.";
   }
 
+  { name = "mailman";
+    maintainers = [ maintainers.unknown ];
+    description = "Mailman -- the GNU mailing list manager";
+  }
+
   { name = "pelican";
     maintainers = [ maintainers.garbas ];
     description = "Pelican static blog generator and its extensions.";

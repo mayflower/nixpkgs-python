@@ -6,6 +6,7 @@ all: \
 	django \
 	flask \
 	homeassistant \
+	mailman \
 	pelican \
 	pyramid \
 	science \
@@ -37,6 +38,14 @@ homeassistant:
 					--setup-requires "six packaging appdirs" \
 					-r requirements.txt
 	nix-build -A homeassistant -o result-homeassistant
+
+
+mailman:
+	cd mailman/ && \
+		$(PYPI2NIX) -v \
+					-V 3.5 \
+					-r requirements.txt
+	nix-build -A mailman -o result-mailman
 
 
 pelican:
@@ -79,6 +88,7 @@ static:
 	django \
 	flask \
 	homeassistant \
+	mailman \
 	pelican \
 	pyramid \
 	science \
